@@ -10,6 +10,8 @@ namespace CentairSolutions
     {
         public string GetDigits(string input)
         {
+            if (input == null)
+                return null;
             var digits = new StringBuilder();
 
             foreach (var chr in input)
