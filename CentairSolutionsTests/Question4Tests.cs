@@ -20,5 +20,16 @@ namespace CentairSolutionsTests
 
             Assert.IsTrue(expeted.SequenceEqual(sorter.SortArray(initial)));
         }
+
+
+        [TestMethod]
+        public void HappyPathNiaveSort()
+        {
+            var sorter = new Sorter();
+            int[] initial = { 5, 8, 2, -1, 0 };
+            int[] expeted = { -1, 0, 2, 5, 8 };
+
+            Assert.IsTrue(expeted.SequenceEqual(sorter.NiaveSort(initial)));
+        }
     }
 }
