@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace CentairSolutions
 {
-    public class Class1
+    public class Sorter
     {
+        public int[] SortArray(int[] input)
+        {
+            return null;
+        }
     }
 }
