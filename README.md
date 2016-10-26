@@ -1,6 +1,16 @@
 ###Question 1:
 
 > What does the following C# code output? Briefly describe what this code is doing.
+> ```csharp
+int[] myCollection = {3, 6, 9};
+int acc = 0;
+foreach(int el in myCollection)
+{
+	acc += el;
+}
+Console.WriteLine(acc);
+```
+
 
 This section of code creates a shrot array and sums up all of the elemets, then prints out the sum. It prints out '18' and a new line charachter when executed
 
@@ -8,6 +18,16 @@ This section of code creates a shrot array and sums up all of the elemets, then 
 ###Question 2:
 
 > What does the following C# code output? What is the main concept being demonstrated here?
+> ```csharp
+int i = 3, j = 2;
+double x = 3, y = 2;
+
+var a = i / j;
+var b = x / y;
+
+Console.WriteLine("{0} {1}", a, b);
+```
+
 
 The code outputs "1 1.5" ; demonstrating how division is handled between integers with truncation vs how division is handled between floating point numbers with a closest approximation available. In this case there are no rounding errors in the floating point calculation.
 
@@ -15,6 +35,21 @@ The code outputs "1 1.5" ; demonstrating how division is handled between integer
 ###Question 3:
 
 > What does the following C# code output? What is special about the Foo() method and what are the consequences of that?
+> ```csharp
+int Foo(int input)
+{
+	if (input < 2)
+		return 0;
+	
+	return input + Foo(input - 2);
+}
+
+void Main()
+{
+	Console.WriteLine(Foo(8));
+}
+```
+
 
 The code outputs 20, summing up the numbers multiples of 2 less than 8 until it reaches something less than 2; in this case 0. The Foo() method is unique in that it uses recursion, calling itself from within the method body. This can be dangerous to use liberally, as it is in this case, because this will cause unnecessary memory usage by the program and slow down execution. Especially so when the function can be made flat, as is very likely here.
 
@@ -22,6 +57,8 @@ The code outputs 20, summing up the numbers multiples of 2 less than 8 until it 
 ###Question 4:
 
 > Write a function that sorts an array of integers
+
+
 ```csharp
 public int[] SortArray(int[] input)
 {
@@ -57,8 +94,9 @@ public int[] SortArray(int[] input)
 }
 ```
 
-https://github.com/dsmiller95/CentairInterview/blob/master/CentairSolutions/Question4.cs
-https://github.com/dsmiller95/CentairInterview/blob/master/CentairSolutionsTests/Question4Tests.cs
+[Code](https://github.com/dsmiller95/CentairInterview/blob/master/CentairSolutions/Question4.cs)
+[Tests](https://github.com/dsmiller95/CentairInterview/blob/master/CentairSolutionsTests/Question4Tests.cs)
+
 
 ---
 ###Question 5:
@@ -82,8 +120,8 @@ public string GetDigits(string input)
     return digits.ToString();
 }
 ```
-https://github.com/dsmiller95/CentairInterview/blob/master/CentairSolutions/Question5.cs
-https://github.com/dsmiller95/CentairInterview/blob/master/CentairSolutionsTests/Question5Tests.cs
+[Code](https://github.com/dsmiller95/CentairInterview/blob/master/CentairSolutions/Question5.cs)
+[Tests](https://github.com/dsmiller95/CentairInterview/blob/master/CentairSolutionsTests/Question5Tests.cs)
 
 ---
 ###Question 6:
@@ -116,13 +154,18 @@ public Dictionary<DayOfWeek, int> CountByDayOfWeek(Widget[] input)
     return result;
 }
 ```
-https://github.com/dsmiller95/CentairInterview/blob/master/CentairSolutions/Question6.cs
-https://github.com/dsmiller95/CentairInterview/blob/master/CentairSolutionsTests/Question6Tests.cs
+[Code](../blob/master/CentairSolutions/Question6.cs)
+[Tests](./blob/master/CentairSolutionsTests/Question6Tests.cs)
 
 ---
 ###Question 7:
 
 > What does the following JavaScript code output? Write a sentence or two explaining why this is.
+> ```javascript
+var i = 0, j = "0";
+console.log(i == j);
+console.log(i === j);
+```
 
 The code outputs "true false" . This is because the first check will attempt to cast both i and j into compatable types, and then check for equality. in this case i would get cast into a string, "0", making it equal to j. In the second check, type casting is disabled and the code checks for both the same type and the same data.
 
@@ -158,13 +201,18 @@ public void PrintDiamond(int width, bool filled = true)
     }
 }
 ```
-https://github.com/dsmiller95/CentairInterview/blob/master/CentairSolutions/Question8.cs
-https://github.com/dsmiller95/CentairInterview/blob/master/CentairSolutionsTests/Question8Tests.cs
+[../blob/master/CentairSolutions/Question8.cs]
+[./blob/master/CentairSolutionsTests/Question8Tests.cs]
 
 ---
 ###Question 9:
 
 > Which of these is a common way to get objects into a SQL database?
+
+> * Lazy Loading
+> * Liskov Substitution
+> * CORBA
+> * Object-Relational Mapping
 
 Object-Relational Mapping. 
 
@@ -172,6 +220,25 @@ Object-Relational Mapping.
 ###Question 10:
 
 > What do you expect the value of x to be at the end of Main()? Briefly explain your choice.
+
+> ```csharp
+class Widget
+{
+	public string Name { get; set; }
+	public decimal Weight { get; set; }
+}
+
+void Main()
+{
+	var theList = new[] {
+		new Widget { Name = "A", Weight = 10.0 },
+		new Widget { Name = "B", Weight = 20.0 },
+		new Widget { Name = "C", Weight = 5.5 }
+	};
+	
+	var x = theList.Max(w => w.Weight);
+}
+```
 
 I would expect x to have a value of the second Widget in theList. The Max function should find the object in the list with the highest value as determined by the value function (w => w.Weight) , returning the object itself rather than the result of the value function.
 
@@ -213,14 +280,34 @@ public async Task<string> getURL(string url)
 
 > In the following code snippet, what pattern is being used to create the OrderProcessor class?
 
+> ```csharp
+class OrderProcessor
+{
+	private readonly IOrderRepository orderRepository;
+
+	public OrderProcessor(IOrderRepository orderRepository)
+	{
+		this.orderRespository = orderRepository;
+	}
+
+	...
+}
+```
+
+
 Inversion of control
 
+
+---
+###SQL
 ---
 ###Question 13:
 
 > Write SQL queries that can answer each of the following questions:
 
 > Which users that have placed at least one order have the oldest accounts?
+
+
 ```SQL
 SELECT
     DISTINCT Customers.Name, Customers.JoinDate, Customers.Id
