@@ -49,5 +49,46 @@ Inversion of control
 Question 13:
 
 
+Which users that have placed at least one order have the oldest accounts?
+
+SELECT
+    DISTINCT Customers.Name Customers.JoinDate Customers.Id
+FROM 
+    Customers INNER JOIN Orders
+    ON Customers.Id = Orders.CustomerId
+ORDER BY Customers.JoinDate ASC;
+
+
+What is the current price value of the entire inventory of active products?
+
+SELECT
+    SUM(UnitPrice) AS TotalPrice
+FROM Products
+WHERE IsActive = 1;
+
+How many customers have ordered the product "Granola" at some point?
+
+SELECT
+    COUNT(CustomerId) AS GranolaLovers
+FROM (
+    SELECT
+        DISTINCT Orders.CustomerId AS CustomerId
+    FROM
+        Orders INNER JOIN Products
+        ON Orders.ProductId = Products.Id
+    WHERE
+        Products.Name = 'Granola'
+    );
+
+Which orders included products that sold at a different price than they are currently listed at?
+
+SELECT *
+FROM
+    Orders INNER JOIN Products
+    ON Oders.ProductId = Products.Id
+WHERE
+    Orders.UnitPrice != Products.UnitPrice
 
 Question 14:
+
+
