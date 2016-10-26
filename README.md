@@ -19,14 +19,14 @@ This section of code creates a shrot array and sums up all of the elemets, then 
 
 > What does the following C# code output? What is the main concept being demonstrated here?
 > ```csharp
-int i = 3, j = 2;
-double x = 3, y = 2;
+> int i = 3, j = 2;
+> double x = 3, y = 2;
 
-var a = i / j;
-var b = x / y;
+> var a = i / j;
+> var b = x / y;
 
-Console.WriteLine("{0} {1}", a, b);
-```
+> Console.WriteLine("{0} {1}", a, b);
+> ```
 
 
 The code outputs "1 1.5" ; demonstrating how division is handled between integers with truncation vs how division is handled between floating point numbers with a closest approximation available. In this case there are no rounding errors in the floating point calculation.
@@ -94,8 +94,8 @@ public int[] SortArray(int[] input)
 }
 ```
 
-[Code](https://github.com/dsmiller95/CentairInterview/blob/master/CentairSolutions/Question4.cs)
-[Tests](https://github.com/dsmiller95/CentairInterview/blob/master/CentairSolutionsTests/Question4Tests.cs)
+[Code](./CentairSolutions/Question4.cs)
+[Tests](./CentairSolutionsTests/Question4Tests.cs)
 
 
 ---
@@ -120,8 +120,8 @@ public string GetDigits(string input)
     return digits.ToString();
 }
 ```
-[Code](https://github.com/dsmiller95/CentairInterview/blob/master/CentairSolutions/Question5.cs)
-[Tests](https://github.com/dsmiller95/CentairInterview/blob/master/CentairSolutionsTests/Question5Tests.cs)
+[Code](./CentairSolutions/Question5.cs)
+[Tests](./CentairSolutionsTests/Question5Tests.cs)
 
 ---
 ###Question 6:
@@ -154,8 +154,8 @@ public Dictionary<DayOfWeek, int> CountByDayOfWeek(Widget[] input)
     return result;
 }
 ```
-[Code](../blob/master/CentairSolutions/Question6.cs)
-[Tests](./blob/master/CentairSolutionsTests/Question6Tests.cs)
+[Code](./CentairSolutions/Question6.cs)
+[Tests](./CentairSolutionsTests/Question6Tests.cs)
 
 ---
 ###Question 7:
@@ -201,8 +201,8 @@ public void PrintDiamond(int width, bool filled = true)
     }
 }
 ```
-[../blob/master/CentairSolutions/Question8.cs]
-[./blob/master/CentairSolutionsTests/Question8Tests.cs]
+[./CentairSolutions/Question8.cs]
+[./CentairSolutionsTests/Question8Tests.cs]
 
 ---
 ###Question 9:
