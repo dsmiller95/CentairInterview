@@ -12,7 +12,7 @@ Console.WriteLine(acc);
 ```
 
 
-This section of code creates a shrot array and sums up all of the elemets, then prints out the sum. It prints out '18' and a new line charachter when executed
+This section of code creates a short array and sums up all of the elements, then prints out the sum. It prints out '18' and a new line character when executed
 
 ---
 ###Question 2:
@@ -65,7 +65,7 @@ public int[] SortArray(int[] input)
     if (input == null)
         return null;
 
-    /*using coctail sort because the example given was small that a simple sort
+    /*using cocktail sort because the example given was small that a simple sort
       will be most efficient and avoid a need to instantiate any new data structures
     */
     
@@ -171,7 +171,7 @@ public Dictionary<DayOfWeek, int> CountByDayOfWeek(Widget[] input)
 > console.log(i === j);
 > ```
 
-The code outputs "true false" . This is because the first check will attempt to cast both i and j into compatable types, and then check for equality. in this case i would get cast into a string, "0", making it equal to j. In the second check, type casting is disabled and the code checks for both the same type and the same data.
+The code outputs "true false" . This is because the first check will attempt to cast both i and j into compatible types, and then check for equality. in this case i would get cast into a string, "0", making it equal to j. In the second check, type casting is disabled and the code checks for both the same type and the same data.
 
 ---
 ###Question 8:
