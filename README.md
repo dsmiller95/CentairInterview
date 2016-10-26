@@ -65,7 +65,8 @@ public int[] SortArray(int[] input)
     if (input == null)
         return null;
 
-    /*using coctail sort because the example given was small that a simple sort will be most efficient and avoid a need to instantiate any new data structures
+    /*using coctail sort because the example given was small that a simple sort
+      will be most efficient and avoid a need to instantiate any new data structures
     */
     
     int top = input.Length - 1, bottom = 0;
