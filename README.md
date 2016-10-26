@@ -36,19 +36,19 @@ The code outputs "1 1.5" ; demonstrating how division is handled between integer
 
 > What does the following C# code output? What is special about the Foo() method and what are the consequences of that?
 > ```csharp
-int Foo(int input)
-{
-	if (input < 2)
-		return 0;
-	
-	return input + Foo(input - 2);
-}
+> int Foo(int input)
+> {
+> 	if (input < 2)
+> 		return 0;
+> 	
+> 	return input + Foo(input - 2);
+> }
 
-void Main()
-{
-	Console.WriteLine(Foo(8));
-}
-```
+> void Main()
+> {
+> 	Console.WriteLine(Foo(8));
+> }
+> ```
 
 
 The code outputs 20, summing up the numbers multiples of 2 less than 8 until it reaches something less than 2; in this case 0. The Foo() method is unique in that it uses recursion, calling itself from within the method body. This can be dangerous to use liberally, as it is in this case, because this will cause unnecessary memory usage by the program and slow down execution. Especially so when the function can be made flat, as is very likely here.
@@ -95,6 +95,7 @@ public int[] SortArray(int[] input)
 ```
 
 [Code](./CentairSolutions/Question4.cs)
+
 [Tests](./CentairSolutionsTests/Question4Tests.cs)
 
 
@@ -121,6 +122,7 @@ public string GetDigits(string input)
 }
 ```
 [Code](./CentairSolutions/Question5.cs)
+
 [Tests](./CentairSolutionsTests/Question5Tests.cs)
 
 ---
@@ -155,6 +157,7 @@ public Dictionary<DayOfWeek, int> CountByDayOfWeek(Widget[] input)
 }
 ```
 [Code](./CentairSolutions/Question6.cs)
+
 [Tests](./CentairSolutionsTests/Question6Tests.cs)
 
 ---
@@ -162,10 +165,10 @@ public Dictionary<DayOfWeek, int> CountByDayOfWeek(Widget[] input)
 
 > What does the following JavaScript code output? Write a sentence or two explaining why this is.
 > ```javascript
-var i = 0, j = "0";
-console.log(i == j);
-console.log(i === j);
-```
+> var i = 0, j = "0";
+> console.log(i == j);
+> console.log(i === j);
+> ```
 
 The code outputs "true false" . This is because the first check will attempt to cast both i and j into compatable types, and then check for equality. in this case i would get cast into a string, "0", making it equal to j. In the second check, type casting is disabled and the code checks for both the same type and the same data.
 
@@ -201,8 +204,9 @@ public void PrintDiamond(int width, bool filled = true)
     }
 }
 ```
-[./CentairSolutions/Question8.cs]
-[./CentairSolutionsTests/Question8Tests.cs]
+[Code](./CentairSolutions/Question8.cs)
+
+[Tests](./CentairSolutionsTests/Question8Tests.cs)
 
 ---
 ###Question 9:
