@@ -28,7 +28,7 @@ The code outputs "true false" . This is because the first check will attempt to 
 
 Question 8:
 
------
+See code library
 
 Question 9:
 
@@ -40,7 +40,7 @@ I would expect x to have a value of the second Widget in theList. The Max functi
 
 Question 11:
 
------
+See code library
 
 Question 12:
 
