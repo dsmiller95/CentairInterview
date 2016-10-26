@@ -226,23 +226,23 @@ Object-Relational Mapping.
 > What do you expect the value of x to be at the end of Main()? Briefly explain your choice.
 
 > ```csharp
-class Widget
-{
-	public string Name { get; set; }
-	public decimal Weight { get; set; }
-}
+> class Widget
+> {
+> 	public string Name { get; set; }
+> 	public decimal Weight { get; set; }
+> }
 
-void Main()
-{
-	var theList = new[] {
-		new Widget { Name = "A", Weight = 10.0 },
-		new Widget { Name = "B", Weight = 20.0 },
-		new Widget { Name = "C", Weight = 5.5 }
-	};
-	
-	var x = theList.Max(w => w.Weight);
-}
-```
+> void Main()
+> {
+> 	var theList = new[] {
+> 		new Widget { Name = "A", Weight = 10.0 },
+> 		new Widget { Name = "B", Weight = 20.0 },
+> 		new Widget { Name = "C", Weight = 5.5 }
+> 	};
+> 	
+> 	var x = theList.Max(w => w.Weight);
+> }
+> ```
 
 I would expect x to have a value of the second Widget in theList. The Max function should find the object in the list with the highest value as determined by the value function (w => w.Weight) , returning the object itself rather than the result of the value function.
 
@@ -285,18 +285,18 @@ public async Task<string> getURL(string url)
 > In the following code snippet, what pattern is being used to create the OrderProcessor class?
 
 > ```csharp
-class OrderProcessor
-{
-	private readonly IOrderRepository orderRepository;
-
-	public OrderProcessor(IOrderRepository orderRepository)
-	{
-		this.orderRespository = orderRepository;
-	}
-
-	...
-}
-```
+> class OrderProcessor
+> {
+> 	private readonly IOrderRepository orderRepository;
+> 
+> 	public OrderProcessor(IOrderRepository orderRepository)
+> 	{
+> 		this.orderRespository = orderRepository;
+> 	}
+> 
+> 	...
+> }
+> ```
 
 
 Inversion of control
