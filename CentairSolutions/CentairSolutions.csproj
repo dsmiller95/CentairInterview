@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Question8.cs" />
+    <Compile Include="Question6.cs" />
     <Compile Include="Question5.cs" />
     <Compile Include="Question4.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
