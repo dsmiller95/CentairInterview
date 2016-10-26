@@ -107,10 +107,12 @@ WHERE
     Orders.UnitPrice != Products.UnitPrice
 ```
 
-Question 14:
+---
+###Question 14:
 
 In order to allow for multiple products to be mapped to in a single Order instance; I would recommend creating a new table, ProductOrders, and moving some columns from Orders into this table. The new ProductOrders and Orders table would look like this:
 
+```SQL
 CREATE TABLE ProdcutOrders (
     OrderId int NOT NULL CONSTRAINT FK_OrderId FOREIGN KEY REFERENCES Orders(Id),
     ProductId int NOT NULL CONSTRAINT FK_ProductId FOREIGN KEY REFERENCES Products(Id),
@@ -124,6 +126,7 @@ CREATE TABLE Orders (
     OrderDate datetime NOT NULL,
     ShippedDate datetime
 );
+```
 
 This would allow for a many-to-one relationship between Products and Orders, while maintaining the per-product order information in the ProductOrders cross table.
 
